@@ -14,11 +14,13 @@ export const ProductItem: React.FC<Product> = ({
 	product: { id, title, description, price, image },
 }) => {
 	return (
-		<Link className="max-w-xs flex-1" href={`/product/${id}`}>
-			<article className="rounded-md border border-border-color bg-background p-4 shadow-md">
-				<ProductItemCover src={image.src} alt={image.alt} />
-				<ProductItemInfo title={title} description={description} price={price} />
-			</article>
-		</Link>
+		<li className="max-w-xs flex-1">
+			<Link href={`/product/${id}`}>
+				<article className="rounded-md border border-border-color bg-background p-4 shadow-md">
+					<ProductItemCover src={image.src} alt={image.alt} />
+					<ProductItemInfo title={title} description={description} price={price} />
+				</article>
+			</Link>
+		</li>
 	);
 };

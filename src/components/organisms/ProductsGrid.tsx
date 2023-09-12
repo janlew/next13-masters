@@ -9,11 +9,11 @@ type Products = {
 export const ProductsGrid: React.FC<Products> = ({ products }) => {
 	return (
 		<section className="container mx-auto px-4 py-8 lg:px-8">
-			<div data-testid="products-list" className="flex flex-wrap justify-between gap-5">
+			<ul data-testid="products-list" className="flex flex-wrap justify-between gap-5">
 				{products.map((product) => (
 					<ProductItem key={product.id} product={product} />
 				))}
-			</div>
+			</ul>
 		</section>
 	);
 };
