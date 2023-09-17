@@ -14,7 +14,7 @@ export const ProductItem: React.FC<Product> = ({
 	product: { id, title, description, price, image },
 }) => {
 	return (
-		<li className="max-w-xs flex-1">
+		<li>
 			<Link href={`/product/${id}`}>
 				<article className="rounded-md border border-border-color bg-background p-4 shadow-md">
 					<ProductItemCover src={image.src} alt={image.alt} />

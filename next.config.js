@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	experimental: {
+		typedRoutes: true,
+		mdxRs: true,
+	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "naszsklep-api.vercel.app",
+			},
+		],
+	},
+};
 
-module.exports = nextConfig;
+const withMDX = require("@next/mdx")();
+module.exports = withMDX(nextConfig);
