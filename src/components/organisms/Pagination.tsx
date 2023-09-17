@@ -17,7 +17,7 @@ export const Pagination: FC<Props> = ({ baseHref, pageNumber, pagesCount }) => {
 	const nextPageNumber = currentPage < pagesCount ? currentPage + 1 : null;
 
 	return (
-		<ul className="flex items-center justify-center gap-2">
+		<ul className="flex items-center justify-center gap-2" aria-label="pagination">
 			{/* BACK ITEM */}
 			{prevPageNumber && <PaginationItem baseHref={baseHref} page={prevPageNumber} text="Back" />}
 			{/* FIRST ITEM */}
