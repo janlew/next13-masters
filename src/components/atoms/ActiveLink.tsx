@@ -17,7 +17,7 @@ export const ActiveLink: FC<Props<string>> = ({
 	href,
 	children,
 	className = "text-white",
-	activeClassName = "underline",
+	activeClassName = "border-b border-white",
 }) => {
 	const pathname = usePathname();
 	const isActive = `/${pathname.split("/")[1]}` === href || pathname === href;

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { type FC } from "react";
 
 import { ActiveLink } from "../atoms/ActiveLink";
@@ -8,9 +9,9 @@ export const Header: FC = () => {
 		<header className="bg-blue-primary py-4 text-background shadow-md">
 			<div className="mx-auto flex max-w-screen-xl items-center justify-between px-4">
 				{/* Brand Logo/Name */}
-				<ActiveLink href="/">
+				<Link href="/">
 					<Logo />
-				</ActiveLink>
+				</Link>
 
 				{/* Navigation ActiveLinks */}
 				<nav className="hidden space-x-4 md:block">
