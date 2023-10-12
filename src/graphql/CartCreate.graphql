@@ -1,0 +1,26 @@
+mutation CartCreate($publishedAt: DateTime!) {
+	createCart(data: { publishedAt: $publishedAt }) {
+		data {
+			id
+			attributes {
+				cart_items {
+					data {
+						id
+						attributes {
+							product {
+								data {
+									id
+									attributes {
+										name
+										price
+									}
+								}
+							}
+							quantity
+						}
+					}
+				}
+			}
+		}
+	}
+}

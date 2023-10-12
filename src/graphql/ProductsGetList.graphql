@@ -1,0 +1,5 @@
+query ProductsGetList($page: Int!, $pageSize: Int!, $sort: [String]) {
+	products(pagination: { page: $page, pageSize: $pageSize }, sort: $sort) {
+		...ProductListResponse
+	}
+}

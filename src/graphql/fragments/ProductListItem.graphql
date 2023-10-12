@@ -1,0 +1,21 @@
+fragment ProductListItem on ProductEntity {
+	id
+	attributes {
+		...ProductListItemInfo
+		slug
+		images {
+			data {
+				attributes {
+					...Image
+				}
+			}
+		}
+		categories {
+			data {
+				attributes {
+					name
+				}
+			}
+		}
+	}
+}

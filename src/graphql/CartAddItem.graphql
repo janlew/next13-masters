@@ -1,0 +1,9 @@
+mutation CartAddItem($productId: ID!, $quantity: Int!, $cartId: ID!, $publishedAt: DateTime!) {
+	createCartItem(
+		data: { product: $productId, quantity: $quantity, cart: $cartId, publishedAt: $publishedAt }
+	) {
+		data {
+			id
+		}
+	}
+}

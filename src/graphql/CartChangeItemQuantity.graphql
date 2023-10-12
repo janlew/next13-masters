@@ -1,0 +1,10 @@
+mutation CartChangeItemQuantity($id: ID!, $quantity: Int!) {
+	updateCartItem(id: $id, data: { quantity: $quantity }) {
+		data {
+			id
+			attributes {
+				quantity
+			}
+		}
+	}
+}

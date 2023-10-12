@@ -1,0 +1,5 @@
+query ProductsGetSingleBySlug($slug: String!) {
+	products(filters: { slug: { eq: $slug } }) {
+		...ProductListResponse
+	}
+}

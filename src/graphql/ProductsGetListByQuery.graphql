@@ -1,0 +1,5 @@
+query ProductsGetListByQuery($query: String!) {
+	products(filters: { name: { contains: $query } }) {
+		...ProductListResponse
+	}
+}

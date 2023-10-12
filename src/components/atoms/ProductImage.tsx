@@ -1,20 +1,19 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {
-	src: string;
-	alt: string;
-};
+import { type ImageFragment } from "@/gql/graphql";
 
-export const ProductImage: React.FC<Props> = ({ src, alt }) => {
+const STRAPI_URL = process.env.STRAPI_URL;
+
+export const ProductImage: React.FC<ImageFragment> = ({ url, alternativeText, height, width }) => {
 	return (
 		<div className="aspect-square overflow-hidden rounded-md bg-white p-2">
 			<Image
 				className="h-full w-full object-contain"
-				src={src}
-				alt={alt}
-				height={400}
-				width={400}
+				src={`${STRAPI_URL}${url}`}
+				alt={alternativeText || ""}
+				height={height || 400}
+				width={width || 400}
 			/>
 		</div>
 	);

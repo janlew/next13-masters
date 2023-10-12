@@ -1,0 +1,9 @@
+fragment Comment on CommentEntity {
+	attributes {
+		headline
+		content
+		rating
+		name
+		email
+	}
+}

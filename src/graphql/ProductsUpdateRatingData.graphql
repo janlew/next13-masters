@@ -1,0 +1,7 @@
+mutation ProductsUpdateProductRating($id: ID!, $avgRating: Int!, $ratingCount: Int!) {
+	updateProduct(id: $id, data: { avgRating: $avgRating, ratingCount: $ratingCount }) {
+		data {
+			id
+		}
+	}
+}

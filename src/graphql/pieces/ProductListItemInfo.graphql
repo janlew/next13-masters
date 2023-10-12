@@ -1,0 +1,7 @@
+fragment ProductListItemInfo on Product {
+	name
+	description
+	price
+	avgRating
+	ratingCount
+}

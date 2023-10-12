@@ -1,0 +1,25 @@
+mutation ProductsAddCommentByProductId(
+	$headline: String!
+	$content: String!
+	$rating: Int!
+	$name: String!
+	$email: String!
+	$productId: ID!
+	$publishedAt: DateTime!
+) {
+	createComment(
+		data: {
+			headline: $headline
+			content: $content
+			rating: $rating
+			name: $name
+			email: $email
+			product: $productId
+			publishedAt: $publishedAt
+		}
+	) {
+		data {
+			id
+		}
+	}
+}

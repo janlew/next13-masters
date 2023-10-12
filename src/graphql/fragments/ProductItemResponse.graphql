@@ -1,0 +1,5 @@
+fragment ProductItemResponse on ProductEntityResponse {
+	data {
+		...ProductListItem
+	}
+}

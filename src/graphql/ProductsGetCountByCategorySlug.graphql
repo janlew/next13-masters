@@ -1,0 +1,9 @@
+query ProductsGetCountByCategorySlug($slug: String!) {
+	products(filters: { categories: { slug: { eq: $slug } } }) {
+		meta {
+			pagination {
+				total
+			}
+		}
+	}
+}

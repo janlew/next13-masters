@@ -1,0 +1,7 @@
+query ProductsGetCommentsByProductId($id: ID!) {
+	comments(filters: { product: { id: { eq: $id } } }) {
+		data {
+			...Comment
+		}
+	}
+}

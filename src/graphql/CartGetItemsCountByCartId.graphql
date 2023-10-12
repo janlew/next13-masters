@@ -1,0 +1,9 @@
+query CartGetItemsCountByCartId($cartId: ID!) {
+	cartItems(filters: { cart: { id: { eq: $cartId } } }) {
+		data {
+			attributes {
+				quantity
+			}
+		}
+	}
+}

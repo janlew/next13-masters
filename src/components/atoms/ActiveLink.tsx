@@ -20,10 +20,19 @@ export const ActiveLink: FC<Props<string>> = ({
 	activeClassName = "border-b border-white",
 }) => {
 	const pathname = usePathname();
-	const isActive = `/${pathname.split("/")[1]}` === href || pathname === href;
+	const hrefString = `${href as string}`;
+	const isActive =
+		`/${pathname.split("/")[1]}` === href ||
+		pathname === href ||
+		(pathname.split("/")[1] === "categories" &&
+			pathname.split("/")[2] === hrefString.split("/")[2]);
 
 	return (
-		<Link href={href} className={clsx(className, isActive && activeClassName)}>
+		<Link
+			href={href}
+			className={clsx(className, isActive && activeClassName)}
+			aria-current={isActive ? "page" : undefined}
+		>
 			{children}
 		</Link>
 	);
