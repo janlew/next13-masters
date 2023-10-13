@@ -1,6 +1,6 @@
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { cookies } from "next/headers";
 import Link from "next/link";
-import { type FC } from "react";
 
 import { ActiveLink } from "../atoms/ActiveLink";
 import { Logo } from "../atoms/Logo";
@@ -8,7 +8,7 @@ import { SearchInput } from "../atoms/SearchInput";
 
 import { getItemsCount } from "@/api/cart";
 
-export const Header: FC = async () => {
+export const Header = async () => {
 	const cartId = cookies().get("cartId")?.value;
 	let cartItemsCount: number = 0;
 	if (cartId) {
@@ -44,7 +44,12 @@ export const Header: FC = async () => {
 
 				{/* User Account & Cart Icon (placeholders, ideally use SVG icons) */}
 				<div className="flex items-center space-x-4">
-					<a href="/profile">[Profile]</a>
+					<SignedIn>
+						<UserButton userProfileMode="navigation" />
+					</SignedIn>
+					<SignedOut>
+						<SignInButton />
+					</SignedOut>
 					<ActiveLink href="/cart">
 						Cart <span>{cartItemsCount} items</span>
 					</ActiveLink>
