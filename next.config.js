@@ -39,6 +39,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "media.graphassets.com",
 			},
+			{
+				protocol: "https",
+				hostname: "next13masters.stagetest.it",
+			},
 		],
 	},
 	redirects: async () => {
